@@ -36,6 +36,7 @@ function Get-JRE-Basepath {
     return $newest.Directory.FullName
 }
 
+# Opens a Windows Forms 'OpenFileDialog' and returns the path of the selected file.
 function Select-File-Dialog {
     Add-Type -AssemblyName System.Windows.Forms
     $openFileDialog = New-Object System.Windows.Forms.OpenFileDialog
