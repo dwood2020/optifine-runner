@@ -1,7 +1,7 @@
 ### OptiFine Runner
 ---    
 
-This is a simple PowerShell script to easily install [OptiFine](https://optifine.net/):tm: packets without the need to install a separate Java Runtime Environment.    
+This is a simple PowerShell script to easily install [OptiFine](https://optifine.net/)&copy; packets without the need to install a separate Java Runtime Environment.    
 Instead, the most recent JRE bundled with Minecraft is detected and invoked. That's all.
 
 #### Usage
