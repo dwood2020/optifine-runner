@@ -18,7 +18,7 @@ function Find-File {
 # Gets the absolute path to the newest bundled Java Runtime.
 # E.g. if there is a java.exe in C:\User\foo\java.exe, this function returns
 # 'C:\User\foo'.
-function Get-JRE-Basepath {
+function Get-JreBasepath {
     $mcBaseLoc = Get-Package -Name "Minecraft*" -AllVersions | Select-Object -ExpandProperty Source
     $runtimeSubdir = "/runtime"
     $runtimeLoc = $mcBaseLoc + $runtimeSubdir
@@ -37,7 +37,7 @@ function Get-JRE-Basepath {
 }
 
 # Opens a Windows Forms 'OpenFileDialog' and returns the path of the selected file.
-function Select-File-Dialog {
+function Open-SelectFileDialog {
     Add-Type -AssemblyName System.Windows.Forms
     $openFileDialog = New-Object System.Windows.Forms.OpenFileDialog
     $openFileDialog.Title = "Select OptiFine JAR packet"
@@ -60,8 +60,8 @@ function Select-File-Dialog {
 Write-Host "Runner for OptiFine .jar installer packets"
 Write-Host "------------------------------------------`n"
 
-$jrePath = Get-JRE-Basepath
-$optifinePath = Select-File-Dialog
+$jrePath = Get-JreBasepath
+$optifinePath = Open-SelectFileDialog
 
 Set-Location $($jrePath)
 .\java.exe -jar $($optifinePath)
